@@ -17,6 +17,9 @@ It also includes a test server written in Python that provides a compatible
 implementation of the FlashAir API and thus can be used for debugging and
 testing the web app during development.
 
+The project was inspired by JSFlashAero by Christian Holl
+(https://github.com/C-X1/JSFlashAero).
+
 
 ## Installation
 
@@ -37,4 +40,3 @@ http://flashair/SD_WLAN/FlashAssassin/index.html.
 
 For more information on the FlashAir™ wireless SD cards, see
 http://www.toshiba-memory.com.sg/wireless_sdcard.html.
-
