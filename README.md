@@ -21,6 +21,20 @@ The project was inspired by JSFlashAero by Christian Holl
 (https://github.com/C-X1/JSFlashAero).
 
 
+## Roadmap
+
+  - display graphs like cameras show it
+    - histogram (combined or separated by color)
+  - display EXIF information
+    - resolution and aspect ratio
+    - file size
+    - aperture
+    - exposure time
+    - sensor sensitivity (ISO value)
+    - focal length
+      - focal length translated to 35mm film
+
+
 ## Installation
 
 Just copy the directory `SD_WLAN/FlashAssassin` to the correspondent
