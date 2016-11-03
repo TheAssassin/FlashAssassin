@@ -1,0 +1,20 @@
+<!-- template used recursively to build the directory tree as a bunch of radio inputs -->
+<script type="text/ng-template" id="settings-tree-node">
+    <input type="radio" ng-model="$storage.dirPath" ng-value="dirEntry.path"> {{dirEntry.name}}
+    <ul class="directory-tree">
+        <li ng-repeat="dirEntry in dirEntry.subDirs" ng-include src="'settings-tree-node'"></li>
+    </ul>
+</script>
+
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Settings</h3>
+</div>
+<div class="modal-body settings-modal-body">
+    <h4>Please select the directory that contains your JPEGs:</h4>
+    <form>
+        <div ng-include src="'settings-tree-node'" ng-init="dirEntry = subDirs[0]"></div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="close()">Close</button>
+</div>

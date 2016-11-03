@@ -1,0 +1,30 @@
+html, body, .controller-container, .img-container, {
+    height: 100%;
+    width: 100%;
+}
+
+.current-img {
+    max-height: 100vh;
+    max-width: 100%;
+}
+
+.directory-tree {
+    list-style-type: none;
+}
+
+.buttons-container {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+}
+
+.settings-modal-body {
+    color: white;
+}
+
+.loading-icon {
+    color: white;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FlashAssassin</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link type="text/css" rel="stylesheet" href="css/cyborg.min.css">
+        <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheet" href="css/flashassassin.css">
+
+        <script type="application/javascript" src="js/angular.min.js"></script>
+        <script type="application/javascript" src="js/ui-bootstrap-tpls-2.2.0.min.js"></script>
+        <script type="application/javascript" src="js/ngStorage.min.js"></script>
+        <script type="application/javascript" src="js/flashassassin.js"></script>
+    </head>
+
+    <body ng-app="FlashAssassin">
+        <div ng-controller="MainCtrl" class="controller-container">
+            <div class="text-center img-container">
+                <img class="current-img" ng-src="{{currentImg.fullPath}}" imgload="imgLoading = false">
+            </div>
+            <div class="buttons-container">
+                <button class="btn" ng-click="togglePlay()" ng-class="{'btn-danger': running, 'btn-success': !running}">
+                    <i class="fa fa-2x fa-play-circle-o" ng-if="!running"></i>
+                    <i class="fa fa-2x fa-stop-circle-o" ng-if="running"></i>
+                </button>
+                <button class="btn btn-primary" ng-click="showSettings()">
+                    Settings
+                </button>
+            </div>
+            <div class="loading-icon">
+                <i class="fa fa-spinner fa-spin fa-2x" ng-if="imgLoading"></i>
+            </div>
+        </div>
+    </body>
+</html>
