@@ -46,6 +46,19 @@ Connect to the FlashAir wifi, open your browser and navigate to
 http://flashair/FlashAssassin/index.html.
 
 
+## Debugging and testing
+
+To run the test server, you need Python (tested on versions 2.7 and 3.3+) and
+the excellent Flask web development library (available as a package for most
+Linux distribution, on other systems pip (or pip3) can be used to install
+Flask).
+
+After installing Flask, run `python3 server.py` in the root directory.
+
+Now you can open the FlashAssassin app in your browser:
+http://127.0.0.1:5000/FlashAssassin/index.html
+
+
 ## More information
 
 For more information on the FlashAir™ wireless SD cards, see
