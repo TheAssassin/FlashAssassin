@@ -37,17 +37,13 @@ The project was inspired by JSFlashAero by Christian Holl
 
 ## Installation
 
-Just copy the directory `SD_WLAN/FlashAssassin` to the correspondent
-directory on the card.
-
-Please note that the directory on the card might not be visible on Windows
-systems, which means a *nix system might be required to copy the files.
+Just copy the directory `FlashAssassin` into the card's root directory.
 
 
 ## Usage
 
 Connect to the FlashAir wifi, open your browser and navigate to
-http://flashair/SD_WLAN/FlashAssassin/index.html.
+http://flashair/FlashAssassin/index.html.
 
 
 ## More information
