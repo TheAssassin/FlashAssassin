@@ -84,7 +84,7 @@ FlashAssassin.service("FlashAirClient", function($http) {
             
             // sorting required as the server reply might not be sorted already
             rv = rv.sort(function(first, second) {
-                return first.basename.localeCompare(second.basename)
+                return first.date - second.date || first.time - second.time
             })
 
             return rv
