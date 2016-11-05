@@ -11,6 +11,7 @@ test the app.
 
 
 import os
+from datetime import datetime
 from flask import Flask, request, send_file
 from werkzeug.exceptions import BadRequest, NotFound, Forbidden
 
@@ -85,7 +86,7 @@ def command_cgi():
                 stat = os.stat(os.path.join(full_path, i))
 
                 if stat.st_mode & 0o040000:
-                    # is directory
+                    # entry is a directory
                     size = 0
                     flags += 1<<4
 
@@ -94,16 +95,27 @@ def command_cgi():
                         flags += 1<<5
 
                 else:
+                    # entry is a normal file (treated as "archive")
                     size = stat.st_size
                     flags += 1<<5
+
+                creation = datetime.fromtimestamp(stat.st_ctime)
+
+                date = ((creation.year - 1980) << 9)
+                date += (creation.month << 5)
+                date += creation.day
+
+                time = (creation.hour << 11)
+                time += (creation.minute << 5)
+                time += (creation.second // 2)
 
                 row = [
                     path if path != "/" else "",
                     filename,
                     size,
                     flags,
-                    18787,
-                    44686
+                    date,
+                    time,
                 ]
 
                 reply.append(",".join((str(i) for i in row)))
