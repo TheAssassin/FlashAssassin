@@ -61,7 +61,7 @@ def command_cgi():
     headers = {"Content-Type": "text/plain"}
 
     if op == 100:
-        reply = []
+        entries = []
 
         path = request.args["DIR"]
 
@@ -109,7 +109,7 @@ def command_cgi():
                 time += (creation.minute << 5)
                 time += (creation.second // 2)
 
-                row = [
+                entry = [
                     path if path != "/" else "",
                     filename,
                     size,
@@ -118,10 +118,12 @@ def command_cgi():
                     time,
                 ]
 
-                reply.append(",".join((str(i) for i in row)))
+                entries.append(entry)
 
         # sort the result
-        reply.sort(key=lambda x: x[1])
+        entries.sort(key=lambda x: (x[4], x[5]))
+
+        reply = [",".join(str(i) for i in entry) for entry in entries]
 
         # this line is (whyever) inserted by the original API
         reply.insert(0, "WLANSD_FILELIST")
